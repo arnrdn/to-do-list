@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f6f6f6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.to-do-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+  width: 80%;
+  margin: 37vh auto;
+  background-color: #fff;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0 4px 8px 0 rgba(34, 60, 80, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(34, 60, 80, 0.2);
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 2px solid #ececec;
+}
+
+.main-title,
+form {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 2px solid #ececec;
+}
+
+input {
+  border: none;
+  font-style: italic;
+}
+
+.to-do-item {
+  display: flex;
+  align-items: center;
+}
+
+label {
+  margin-left: 10px;
+  border: none;
+  resize: none;
+  font-size: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.more-dot {
+  width: 3px;
+  height: 3px;
+  margin-bottom: 3px;
+  border-radius: 50%;
+  background-color: #bdbdbd;
+}
+
+button {
+  color: #6b6a6b;
+  border: none;
+  padding: 1rem;
+}
+
+button:hover {
+  color: #000;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#icons {
+  color: rgba(0, 0, 0, 0.24);
+  font-size: 0.5rem;
+}
