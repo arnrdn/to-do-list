@@ -1,4 +1,10 @@
 import './style.css';
-import render from './addTask.js';
+import { render, tasksContainer } from './renderTask.js';
+import { newTaskForm, addTask } from './addRemove.js';
+import checkCompleted from './interactive.js';
 
 window.addEventListener('DOMContentLoaded', render);
+
+newTaskForm.addEventListener('submit', addTask);
+
+tasksContainer.addEventListener('change', checkCompleted);

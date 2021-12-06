@@ -15,18 +15,33 @@
         src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/20/908e90/external-reload-arrows-dreamstale-lineal-dreamstale.png"
         alt="reload icon" />
     </div>
-    <form>
-      <input type="text" name="to-do-content" id="to-do-content" placeholder="Add to your list...">
+    <form data-new-task-form>
+      <input type="text" name="to-do-content" id="to-do-content" placeholder="Add to your list..." data-new-task-input>
       <img
         src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/20/908e90/external-send-email-flatart-icons-outline-flatarticons.png"
         alt="add to list icon" />
     </form>
     <ul class="to-do-list" data-tasks>
     </ul>
-    <button>Clear all completed</button>
+    <button type="button">Clear all completed</button>
   </div>
   <a id="icons" href="https://icons8.com/icon/dq7pdxNFSe8j/reload">Reload icon by Icons8</a>
+
   <script type="module" src="index.js"></script>
+
+  <template id="task-template">
+    <li>
+      <div class="to-do-item">
+        <input type="checkbox">
+        <label></label>
+      </div>
+      <div class="more">
+        <div class="more-dot"></div>
+        <div class="more-dot"></div>
+        <div class="more-dot"></div>
+      </div>
+    </li>
+  </template>
 </body>
 
 </html>

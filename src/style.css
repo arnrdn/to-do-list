@@ -43,25 +43,77 @@ form {
   border-bottom: 2px solid #ececec;
 }
 
-input {
+.main-title img {
+  width: 15px;
+  height: 16px;
+}
+
+#to-do-content {
+  font-size: 0.93rem;
   border: none;
   font-style: italic;
+}
+
+#to-do-content:focus {
+  outline: none;
 }
 
 .to-do-item {
   display: flex;
   align-items: center;
+  width: 90%;
 }
 
 label {
-  margin-left: 10px;
   border: none;
   resize: none;
   font-size: 1rem;
   box-sizing: border-box;
-  width: 100%;
   text-decoration: none;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.custom-checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+.custom-checkbox + label::before {
+  content: '';
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 0.25em;
+  margin-right: 12px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+.custom-checkbox:checked + label::before {
+  border-color: #fff;
+  background-image: url("/img/check.png");
+  background-size: 20px;
+}
+
+.custom-checkbox:not(:disabled):not(:checked) + label:hover::before {
+  border-color: #80868d;
+  cursor: pointer;
+}
+
+.custom-checkbox:checked + label {
+  cursor: pointer;
+  text-decoration: line-through;
 }
 
 .more-dot {
