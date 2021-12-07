@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/c93236b2dc.js" crossorigin="anonymous"></script>
   <title>To-Do List | Nana</title>
 </head>
 
@@ -11,19 +12,16 @@
   <div class="to-do-container">
     <div class="main-title">
       Today's To Do
-      <img
-        src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/20/908e90/external-reload-arrows-dreamstale-lineal-dreamstale.png"
-        alt="reload icon" />
+      <i class="fas fa-sync"></i>
     </div>
     <form data-new-task-form>
-      <input type="text" name="to-do-content" id="to-do-content" placeholder="Add to your list..." data-new-task-input>
-      <img
-        src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/20/908e90/external-send-email-flatart-icons-outline-flatarticons.png"
-        alt="add to list icon" />
+      <input type="text" name="to-do-content" id="to-do-content" placeholder="Add to your list..." data-new-task-input
+        required>
+      <i class="fas fa-share"></i>
     </form>
     <ul class="to-do-list" data-tasks>
     </ul>
-    <button type="button">Clear all completed</button>
+    <button type="button" data-delete-completed-tasks>Clear all completed</button>
   </div>
   <a id="icons" href="https://icons8.com/icon/dq7pdxNFSe8j/reload">Reload icon by Icons8</a>
 
@@ -36,9 +34,7 @@
         <label></label>
       </div>
       <div class="more">
-        <div class="more-dot"></div>
-        <div class="more-dot"></div>
-        <div class="more-dot"></div>
+        <i class="fas fa-ellipsis-v"></i>
       </div>
     </li>
   </template>

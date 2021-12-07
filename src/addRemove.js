@@ -1,8 +1,9 @@
-import { render, tasks } from './renderTask.js';
-import { save } from './localStorage.js';
+import { render } from './renderTask.js';
+import { save, tasks } from './localStorage.js';
 
 const newTaskForm = document.querySelector('[data-new-task-form]');
 const newTaskInput = document.querySelector('[data-new-task-input]');
+const clearCompletedTasksButton = document.querySelector('[data-delete-completed-tasks]');
 
 function createTask(name) {
   return {
@@ -15,12 +16,15 @@ function createTask(name) {
 function addTask(e) {
   e.preventDefault();
   const getTaskName = newTaskInput.value;
-  if (getTaskName === null || getTaskName === '');
   const task = createTask(getTaskName);
   newTaskInput.value = null;
   tasks.push(task);
-  save();
-  render();
+  save(tasks);
+  render(tasks);
 }
 
-export { newTaskForm, addTask };
+export {
+  newTaskForm,
+  addTask,
+  clearCompletedTasksButton,
+};

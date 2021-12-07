@@ -35,17 +35,30 @@ ul li {
   border-bottom: 2px solid #ececec;
 }
 
+li:hover {
+  background-color: #fffec4;
+}
+
+.more:hover .fa-ellipsis-v:before {
+  content: "\f2ed";
+}
+
+.fa-sync {
+  color: #8F8D8F;
+}
+
+.fa-share,
+.fa-ellipsis-v {
+  color: #BCBBBD;
+}
+
+
 .main-title,
 form {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
   border-bottom: 2px solid #ececec;
-}
-
-.main-title img {
-  width: 15px;
-  height: 16px;
 }
 
 #to-do-content {
@@ -114,14 +127,6 @@ label {
 .custom-checkbox:checked + label {
   cursor: pointer;
   text-decoration: line-through;
-}
-
-.more-dot {
-  width: 3px;
-  height: 3px;
-  margin-bottom: 3px;
-  border-radius: 50%;
-  background-color: #bdbdbd;
 }
 
 button {

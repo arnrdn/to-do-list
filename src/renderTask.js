@@ -1,5 +1,3 @@
-import { tasks } from './localStorage.js';
-
 const tasksContainer = document.querySelector('[data-tasks]');
 const taskTemplate = document.getElementById('task-template');
 
@@ -9,7 +7,7 @@ function clearItem(item) {
   }
 }
 
-function render() {
+function render(tasks) {
   clearItem(tasksContainer);
   tasks.forEach((task) => {
     const taskItem = document.importNode(taskTemplate.content, true);
@@ -25,4 +23,4 @@ function render() {
   });
 }
 
-export { render, tasks, tasksContainer };
+export { render, tasksContainer };

@@ -1,8 +1,12 @@
-const tasks = JSON.parse(localStorage.getItem('task.list')) || [];
-const taskKey = 'task.list';
+const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+const taskKey = 'tasks';
 
-function save() {
+function save(tasks) {
   localStorage.setItem(taskKey, JSON.stringify(tasks));
 }
 
-export { tasks, taskKey, save };
+export {
+  tasks,
+  taskKey,
+  save,
+};
