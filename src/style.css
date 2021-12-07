@@ -38,6 +38,7 @@ ul li {
 
 .change .fa-ellipsis-v:before {
   content: "\f2ed";
+  color: #a1a1a1;
 }
 
 .fa-sync {
