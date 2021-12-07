@@ -23,4 +23,16 @@ function render(tasks) {
   });
 }
 
-export { render, tasksContainer };
+function focus(e) {
+  const clicked = e.target;
+  if (clicked.tagName.toLowerCase() === 'label' || clicked.tagName.toLowerCase() === 'li') {
+    clicked.classList.toggle('change');
+    if (clicked.classList.contains('change')) {
+      clicked.style.backgroundColor = '#fffec4';
+    } else {
+      clicked.style.backgroundColor = '#fff';
+    }
+  }
+}
+
+export { render, tasksContainer, focus };

@@ -1,4 +1,4 @@
-import { render } from './renderTask.js';
+import { render, focus } from './renderTask.js';
 import { save, tasks } from './localStorage.js';
 
 const newTaskForm = document.querySelector('[data-new-task-form]');
