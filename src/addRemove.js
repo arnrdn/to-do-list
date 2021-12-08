@@ -21,10 +21,29 @@ function addTask(e) {
   tasks.push(task);
   save(tasks);
   render(tasks);
+  document.location.reload();
+}
+
+function deleteItem() {
+  const listItems = document.querySelectorAll('li');
+  listItems.forEach((item, index) => {
+    item.addEventListener('click', (e) => {
+      const deleteBtn = e.target;
+      if (deleteBtn.classList[0] === 'far') {
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks = tasks.filter((task) => task !== tasks[index]);
+        item.remove();
+        save(tasks);
+        render(tasks);
+        document.location.reload();
+      }
+    });
+  });
 }
 
 export {
   newTaskForm,
   addTask,
   clearCompletedTasksButton,
+  deleteItem,
 };
