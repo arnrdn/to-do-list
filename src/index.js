@@ -7,7 +7,7 @@ import {
 } from './addRemove.js';
 import { checkCompleted } from './interactive.js';
 import removeAllCheckedRender from './removeAll.js';
-import { tasks } from './localStorage.js';
+import { tasks, save } from './localStorage.js';
 
 window.addEventListener('DOMContentLoaded', render(tasks));
 
@@ -20,3 +20,17 @@ tasksContainer.addEventListener('click', (e) => {
 });
 
 clearCompletedTasksButton.addEventListener('click', removeAllCheckedRender);
+
+const listItems = document.querySelectorAll('li');
+listItems.forEach((item, index) => {
+  item.addEventListener('click', (e) => {
+    const deleteBtn = e.target;
+    if (deleteBtn.classList[0] === 'far') {
+      let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+      tasks = tasks.filter((task) => task !== tasks[index]);
+      item.remove();
+      save(tasks);
+      render(tasks);
+    }
+  });
+});
