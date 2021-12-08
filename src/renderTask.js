@@ -19,13 +19,16 @@ function render(tasks) {
     const label = taskItem.querySelector('label');
     label.htmlFor = task.id;
     label.append(task.description);
+    const trashBtn = taskItem.querySelector('.delete');
+    trashBtn.id = task.id;
+    console.log(trashBtn.id, checkbox.id)
     tasksContainer.appendChild(taskItem);
   });
 }
 
 function focus(e) {
   const clicked = e.target;
-  if (clicked.tagName.toLowerCase() === 'label' || clicked.tagName.toLowerCase() === 'li') {
+  if (clicked.tagName.toLowerCase() === 'li') {
     clicked.classList.toggle('change');
     if (clicked.classList.contains('change')) {
       clicked.style.backgroundColor = '#fffec4';

@@ -36,9 +36,19 @@ ul li {
   border-bottom: 2px solid #ececec;
 }
 
-.change .fa-ellipsis-v:before {
+.fa-trash-alt {
+  display: none;
+}
+
+.change .fa-trash-alt {
   content: "\f2ed";
-  color: #a1a1a1;
+  color: #8f8f8f;
+  display: block;
+  cursor: pointer;
+}
+
+.change .fa-ellipsis-v  {
+  display: none;
 }
 
 .fa-sync {
@@ -127,12 +137,20 @@ label {
 }
 
 button {
+  border: none;
+}
+
+.task-btn {
+  background-color: transparent;
+}
+
+.clear-all-btn {
   color: #6b6a6b;
   border: none;
   padding: 1rem;
 }
 
-button:hover {
+.clear-all-btn:hover {
   color: #000;
   cursor: pointer;
   text-decoration: underline;

@@ -1,5 +1,5 @@
-const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 const taskKey = 'tasks';
+const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
 function save(tasks) {
   localStorage.setItem(taskKey, JSON.stringify(tasks));

@@ -1,5 +1,5 @@
 import { render } from './renderTask.js';
-import { save, tasks, removeFromStorage } from './localStorage.js';
+import { save, tasks } from './localStorage.js';
 
 const newTaskForm = document.querySelector('[data-new-task-form]');
 const newTaskInput = document.querySelector('[data-new-task-input]');
@@ -24,10 +24,8 @@ function addTask(e) {
 }
 
 function deleteTask(e) {
-  const bucket = e.target;
-  const pseudo = window.getComputedStyle(bucket, ':before');
-  if (pseudo.getPropertyValue('color') === 'rgb(161, 161, 161)') {
-    removeFromStorage(id);
+  if (e.classList.contains('delete')) {
+    e.parentElement.remove();
   }
 }
 
