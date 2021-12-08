@@ -23,15 +23,8 @@ function addTask(e) {
   render(tasks);
 }
 
-function deleteTask(e) {
-  if (e.classList.contains('delete')) {
-    e.parentElement.remove();
-  }
-}
-
 export {
   newTaskForm,
   addTask,
   clearCompletedTasksButton,
-  deleteTask,
 };

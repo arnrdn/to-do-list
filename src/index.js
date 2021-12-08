@@ -7,7 +7,7 @@ import {
 } from './addRemove.js';
 import { checkCompleted } from './interactive.js';
 import removeAllCheckedRender from './removeAll.js';
-import { save, tasks, removeFromStorage } from './localStorage.js';
+import { save, tasks } from './localStorage.js';
 
 window.addEventListener('DOMContentLoaded', render(tasks));
 
@@ -19,10 +19,16 @@ tasksContainer.addEventListener('click', (e) => {
   focus(e);
 });
 
-const bucket = document.querySelector('.delete');
-bucket.addEventListener('click', () => {
-  const checkId = document.querySelector('.custom-checkbox');
-  console.log(bucket.id)
+const bucket = document.getElementsByClassName('delete');
+const checkbox = document.getElementsByClassName('custom-checkbox')
+const unorderedList = document.querySelector('[data-tasks]')
+unorderedList.addEventListener('click', (e) => {
+  if (e.target.tagName.toLowerCase() === 'i') {
+    tasks.forEach((task) => {
+      console.log(task);
+    })
+  }
+
 });
 
 clearCompletedTasksButton.addEventListener('click', removeAllCheckedRender);

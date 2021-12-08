@@ -21,7 +21,6 @@ function render(tasks) {
     label.append(task.description);
     const trashBtn = taskItem.querySelector('.delete');
     trashBtn.id = task.id;
-    console.log(trashBtn.id, checkbox.id)
     tasksContainer.appendChild(taskItem);
   });
 }
