@@ -44,7 +44,7 @@ function deleteItem() {
 function editItem() {
   const itemValue = document.querySelectorAll('textarea');
   itemValue.forEach((item, index) => {
-    item.addEventListener('change', () => {
+    item.addEventListener('keyup', () => {
       tasks[index].description = item.value;
       save(tasks);
     });
