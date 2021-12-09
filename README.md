@@ -4,7 +4,7 @@
 
 > This project is a functional todo list. You can add, edit and delete (one, or a few) tasks. Every change is stored in the local storage.
 
-<img src="/img/app-screenshot.jpg">
+<img src="/img/app-screenshot.png">
 
 
 ## Built With
