@@ -2,7 +2,7 @@
 
 # To-Do List
 
-> This is a project I do to show my JavaScript knowledge, including DOM Manimulations
+> This project is a functional todo list. You can add, edit and delete (one, or a few) tasks. Every change is stored in the local storage.
 
 <img src="/img/app-screenshot.jpg">
 
@@ -10,7 +10,11 @@
 ## Built With
 
 - HTML, CSS, JavaScript
+- Font Awesome 5
 
+## Live Demo
+
+[Click here to see a live version of this app!](https://thirsty-sinoussi-41d158.netlify.app)
 
 ## Getting Started
 
