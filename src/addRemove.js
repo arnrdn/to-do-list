@@ -5,15 +5,13 @@ const newTaskForm = document.querySelector('[data-new-task-form]');
 const newTaskInput = document.querySelector('[data-new-task-input]');
 const clearCompletedTasksButton = document.querySelector('[data-delete-completed-tasks]');
 
-function createTask(name) {
-  return {
-    description: name,
-    complete: false,
-    id: Date.now().toString(),
-  };
-}
+const createTask = (name) => ({
+  description: name,
+  complete: false,
+  id: Date.now().toString(),
+});
 
-function addTask(e) {
+const addTask = (e) => {
   e.preventDefault();
   const getTaskName = newTaskInput.value;
   const task = createTask(getTaskName);
@@ -22,9 +20,9 @@ function addTask(e) {
   save(tasks);
   render(tasks);
   document.location.reload();
-}
+};
 
-function deleteItem() {
+const deleteItem = () => {
   const listItems = document.querySelectorAll('li');
   listItems.forEach((item, index) => {
     item.addEventListener('click', (e) => {
@@ -39,9 +37,9 @@ function deleteItem() {
       }
     });
   });
-}
+};
 
-function editItem() {
+const editItem = () => {
   const itemValue = document.querySelectorAll('textarea');
   itemValue.forEach((item, index) => {
     item.addEventListener('keyup', () => {
@@ -49,7 +47,7 @@ function editItem() {
       save(tasks);
     });
   });
-}
+};
 
 export {
   newTaskForm,

@@ -1,13 +1,13 @@
 const tasksContainer = document.querySelector('[data-tasks]');
 const taskTemplate = document.getElementById('task-template');
 
-function clearItem(item) {
+const clearItem = (item) => {
   while (item.firstChild) {
     item.removeChild(item.firstChild);
   }
-}
+};
 
-function render(tasks) {
+const render = (tasks) => {
   clearItem(tasksContainer);
   tasks.forEach((task) => {
     const taskItem = document.importNode(taskTemplate.content, true);
@@ -22,9 +22,9 @@ function render(tasks) {
     trashBtn.id = task.id;
     tasksContainer.appendChild(taskItem);
   });
-}
+};
 
-function focus(e) {
+const focus = (e) => {
   const clicked = e.target;
   if (clicked.tagName.toLowerCase() === 'li') {
     const clickedChild = clicked.children[1];
@@ -47,6 +47,6 @@ function focus(e) {
       clicked.style.backgroundColor = '#fff';
     }
   }
-}
+};
 
 export { render, tasksContainer, focus };

@@ -1,16 +1,16 @@
 import { save, tasks } from './localStorage.js';
 import { render } from './renderTask.js';
 
-function checkCompleted(e) {
+const checkCompleted = (e) => {
   if (e.target.tagName.toLowerCase() === 'input') {
     const selectedTask = tasks.find((task) => task.id === e.target.id);
     selectedTask.complete = e.target.checked;
     save(tasks);
     render(tasks);
   }
-}
+};
 
-function check() {
+const check = () => {
   const checkbox = document.querySelectorAll('input[type=checkbox]');
   checkbox.forEach((box) => {
     if (box.checked === true) {
@@ -19,7 +19,7 @@ function check() {
       box.nextElementSibling.style.textDecoration = 'none';
     }
   });
-}
+};
 
 export {
   checkCompleted,
