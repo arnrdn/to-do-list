@@ -41,9 +41,20 @@ function deleteItem() {
   });
 }
 
+function editItem() {
+  const itemValue = document.querySelectorAll('textarea');
+  itemValue.forEach((item, index) => {
+    item.addEventListener('change', () => {
+      tasks[index].description = item.value;
+      save(tasks);
+    });
+  });
+}
+
 export {
   newTaskForm,
   addTask,
   clearCompletedTasksButton,
   deleteItem,
+  editItem,
 };
