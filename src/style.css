@@ -13,6 +13,7 @@ body {
   flex-direction: column;
   border-radius: 2px;
   width: 80%;
+  max-width: 550px;
   margin: 37vh auto;
   background-color: #fff;
   -webkit-box-shadow: 0 4px 8px 0 rgba(34, 60, 80, 0.2);
@@ -27,12 +28,32 @@ ul {
 }
 
 ul li {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 17fr 1fr;
+  grid-template-rows: 1fr;
   align-items: center;
   padding: 1rem;
+  background-color: #fff;
   border-bottom: 2px solid #ececec;
+}
+
+.fa-trash-alt {
+  display: none;
+}
+
+.change .fa-trash-alt {
+  content: "\f2ed";
+  color: #8f8f8f;
+  display: inline;
+  cursor: pointer;
+}
+
+.fa-share {
+  color: #bcbbbd;
+}
+
+.fa-sync {
+  color: #8f8d8f;
 }
 
 .main-title,
@@ -41,11 +62,6 @@ form {
   justify-content: space-between;
   padding: 1rem;
   border-bottom: 2px solid #ececec;
-}
-
-.main-title img {
-  width: 15px;
-  height: 16px;
 }
 
 #to-do-content {
@@ -61,31 +77,32 @@ form {
 .to-do-item {
   display: flex;
   align-items: center;
-  width: 90%;
+  width: 70%;
 }
 
-label {
+textarea {
   border: none;
   resize: none;
   font-size: 1rem;
+  width: 80%;
   box-sizing: border-box;
   text-decoration: none;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.custom-checkbox {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
+.check textarea {
+  text-decoration: line-through;
 }
 
-.custom-checkbox + label {
-  display: inline-flex;
-  align-items: center;
-  user-select: none;
+textarea:focus {
+  outline: none;
 }
 
-.custom-checkbox + label::before {
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
   content: '';
   display: inline-block;
   width: 1rem;
@@ -100,37 +117,27 @@ label {
   background-size: 50% 50%;
 }
 
-.custom-checkbox:checked + label::before {
+input[type="checkbox"]:checked {
   border-color: #fff;
   background-image: url("/img/check.png");
   background-size: 20px;
 }
 
-.custom-checkbox:not(:disabled):not(:checked) + label:hover::before {
-  border-color: #80868d;
-  cursor: pointer;
-}
-
-.custom-checkbox:checked + label {
-  cursor: pointer;
-  text-decoration: line-through;
-}
-
-.more-dot {
-  width: 3px;
-  height: 3px;
-  margin-bottom: 3px;
-  border-radius: 50%;
-  background-color: #bdbdbd;
-}
-
 button {
+  border: none;
+}
+
+.task-btn {
+  background-color: transparent;
+}
+
+.clear-all-btn {
   color: #6b6a6b;
   border: none;
   padding: 1rem;
 }
 
-button:hover {
+.clear-all-btn:hover {
   color: #000;
   cursor: pointer;
   text-decoration: underline;
