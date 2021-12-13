@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-[Click here to see a live version of this app!](https://thirsty-sinoussi-41d158.netlify.app)
+[Click here to see a live version of this app!](https://rdnrn.github.io/to-do-list/dist/)
 
 ## Getting Started
 
