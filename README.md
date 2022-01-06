@@ -20,10 +20,10 @@
 
 To get a local copy up and running follow these steps:
 
-1. Click the green "Code" button
-2. Click the "Download ZIP" button
-3. Open a ZIP folder and open either "home.html" or "about.html" files.
-
+1. Clone the project to your local machine.
+2. Open the folder with your favourite IDE.
+3. Enter `npm i`
+4. Enter `npm start`
 
 ## Author
 
